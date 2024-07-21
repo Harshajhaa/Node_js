@@ -1,5 +1,8 @@
 const mongoose = require('mongoose');
-mongoose.connect("mongodb://127.0.0.1:27017/Mydatabase", {
+require('dotenv').config();
+// const mongoUrl = "mongodb://127.0.0.1:27017/Mydatabase"; // for local database
+const mongoUrl = process.env.DB_URL;
+mongoose.connect(mongoUrl, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
